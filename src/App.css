@@ -1,0 +1,131 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 0px;
+  height: 100vh;
+  background-color: #fcd7d6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.elementHide{
+  display: none;
+}
+.App-header {
+  border: solid 6px #f7918f;
+  border-radius: 8px;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  width: 60vw;
+  height: 80vh;
+  padding: 16px;
+  margin: auto;
+  background-color: #fff;
+  overflow: auto;
+}
+
+@media screen and (max-width: 760px) {
+  .App-header {
+    width: 85vw;
+    height: 90vh;
+  }
+}
+
+.App-header>form {
+  display: flex;
+  color: black;
+  margin: auto;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.App-header .dInputAdd {
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: stretch;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  margin-bottom: 10px;
+  
+}
+
+.App-header .dInputAdd input {
+  align-self: stretch;
+  justify-content: stretch;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  border: none;
+  outline: none;
+  border: solid 1px #ccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 2px 4px;
+  width: 50%;
+
+}
+
+.App-header .dInputAdd button {
+  font-size: calc(10px + 2vmin);
+  color: #000;
+  background-color: #fbc5c4;
+  border: solid 1px #f7908d;
+  margin: 0px -1px 0px -1px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: solid 2px#f7908d;
+  width: 100px;
+  border-bottom: solid 2px #f7908d;
+}
+
+.App-header .dTodoList {
+  flex-direction: row;
+  border-bottom: solid 1px #ccc;
+  display: flex;
+  margin-bottom: -1px;
+ 
+}
+
+.App-header .dTodoList div.dList {
+  width: 75%;
+  text-align: left;
+  align-items: center;
+  padding: 12px;
+  word-break: break-all;
+}
+
+.App-header .dTodoList div.dCompelete {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  padding: 4px 16px;
+  justify-content: flex-end;
+}
+
+.App-header .dTodoList div.dCompelete button {
+  align-items: center;
+  color: #fff;
+  background-color: #f35a56;
+  border: none;
+  border-color: #f35a56;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
