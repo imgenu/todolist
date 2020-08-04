@@ -20,10 +20,8 @@ function App() {
     if (inputVal === "" || typeof inputVal !== "string") {
       return false;
     }
-    const newTodos = [
-      ...todos,
-      { id: todos[todos.length - 1].id + 1, name: inputVal },
-    ];
+    const newID = todos.length === 0 ? 0 : todos[todos.length - 1].id + 1;
+    const newTodos = [...todos, { id: newID, name: inputVal }];
     setInputVal("");
     setTodos(newTodos);
     setSearchTodos(newTodos);
@@ -36,7 +34,6 @@ function App() {
   }
   const handleInputSearchChange = (e) => {
     setInputSearchVal(e.target.value);
-    
   };
 
   function handleSearchTodo(e) {
@@ -44,10 +41,11 @@ function App() {
 
     setTodos(searchTodos);
     if (inputSearchVal !== "" && typeof inputSearchVal === "string") {
-      const search=todos.filter(({ name }) => name.toUpperCase().includes(inputSearchVal.toUpperCase()));
+      const search = todos.filter(({ name }) =>
+        name.toUpperCase().includes(inputSearchVal.toUpperCase())
+      );
       setTodos(search);
-    };
-   
+    }
   }
 
   return (
