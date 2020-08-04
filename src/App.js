@@ -11,7 +11,7 @@ function App() {
   const [inputVal, setInputVal] = useState("");
   const [inputSearchVal, setInputSearchVal] = useState("");
   const [todos, setTodos] = useState(todosFromDatabase);
-  const [searchTodos, setSearchTodos] = useState("");
+  const [searchTodos, setSearchTodos] = useState(todosFromDatabase);
   const hadnleInputAddChange = (e) => {
     setInputVal(e.target.value);
   };
@@ -26,11 +26,13 @@ function App() {
     ];
     setInputVal("");
     setTodos(newTodos);
+    setSearchTodos(newTodos);
   };
 
   function handleDeleteTodo(todoId) {
     const newTodos = todos.filter(({ id }) => id !== todoId);
     setTodos(newTodos);
+    setSearchTodos(newTodos);
   }
   const handleInputSearchChange = (e) => {
     setInputSearchVal(e.target.value);
@@ -40,13 +42,8 @@ function App() {
   function handleSearchTodo(e) {
     e.preventDefault();
 
-    if(searchTodos!==''){
-      setTodos(searchTodos);
-      setSearchTodos('');
-    };
-
+    setTodos(searchTodos);
     if (inputSearchVal !== "" && typeof inputSearchVal === "string") {
-      setSearchTodos(todos);
       const search=todos.filter(({ name }) => name.toUpperCase().includes(inputSearchVal.toUpperCase()));
       setTodos(search);
     };
