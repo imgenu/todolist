@@ -83,6 +83,7 @@
   border-top: solid 2px#f7908d;
   width: 100px;
   border-bottom: solid 2px #f7908d;
+  outline: none;
 }
 
 .App-header .dTodoList {
